@@ -1,0 +1,44 @@
+﻿@model IEnumerable<AtivarPortugalScheduler.Models.Meeting>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.DisplayFor(model => model.Last().StartupM.StartupName)</h2>
+<h3>Horário de Speed Dating</h3><br/>
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Company.CompanyName)</a>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room.RoomName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room.Floor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingTime)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room.RoomName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room.Floor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeetingTime)
+            </td>
+        </tr>
+    }
+</table>

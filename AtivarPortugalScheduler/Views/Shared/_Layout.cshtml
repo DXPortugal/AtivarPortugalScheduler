@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Reuniões Ativar Portugal</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="wrap">
+
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row">
+                    <a href="/">
+                        <img class="img-responsive" src="@Url.Content("~/Content/Images/banner.png")" alt="Speed Dating Ativar Portugal" style="margin-left: auto;margin-right: auto;">
+                    </a>
+                </div>
+            </div>
+
+            <div class="container-fluid" style="margin-bottom:30px">
+                @RenderBody()
+            </div>
+        </div>
+
+        <div id="push"></div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <p style="padding-top:5px">&copy;@DateTime.Now.Year- Ativar Portugal</p>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <h3 style="margin-top:50px">Bem vindo ao Speed Dating Ativar Portugal</h3>
+    <p>Para ver o seu horário de reuniões insira o código enviado por email.</p>
+    <br />
+    <div class="col-md-6">
+        @using (Html.BeginForm())
+        {
+            <h4>Empresas/VCs</h4>
+            <form class="form-inline" role="form" method="post">
+                @if (!string.IsNullOrEmpty(ViewBag.CompanyError))
+                {
+                    <div class="form-group has-error">
+                        <input type="text" class="form-control" name="CompanyCode" placeholder="@ViewBag.CompanyError">
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="CompanyCode" value="">
+                    </div>
+                }
+                <button type="submit" class="btn bgblue" value="submit">Submeter</button>
+            </form>
+        }
+    </div>
+
+    <div class="col-md-6">
+        @using (Html.BeginForm())
+        {
+            <h4>Startups</h4>
+            <form class="form-inline" role="form" method="post">
+                @if (!string.IsNullOrEmpty(ViewBag.StartupError))
+                {
+                    <div class="form-group has-error">
+                        <input type="text" class="form-control" name="StartupCode" placeholder="@ViewBag.StartupError">
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="StartupCode" value="">
+                    </div>
+                }
+                <button type="submit" class="btn bgblue" value="submit">Submeter</button>
+            </form>
+        }
+    </div>
+</div>
